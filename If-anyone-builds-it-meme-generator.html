@@ -42,10 +42,15 @@
         }
 
         .middle-text {
-            width: 70%;
+            width: 100%;
+            padding: 2% 10%;
+            height: fit-content;
             font-size: 32px;
             color: #808080;
             margin-bottom: 10px;
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-image: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'><defs><radialGradient id='redGradient' cx='50%' cy='100%' r='100%' fx='50%' fy='100%'><stop offset='0%' style='stop-color:rgb(204, 2, 2);stop-opacity:0.8' /><stop offset='70%' style='stop-color:rgb(0, 0, 0);stop-opacity:0' /></radialGradient></defs><rect x='0' y='0' width='400' height='200' fill='url(%23redGradient)' /></svg>");
         }
 
         .highlighted-text {
@@ -57,7 +62,7 @@
         .author-text {
             font-size: 40px;
             font-weight: bold;
-            padding-top: 16px;
+            padding-top: 26px;
         }
 
         .editor-container {
@@ -78,13 +83,6 @@
             margin-bottom: 5px;
             color: white;
         }
-
-        svg {
-            position: absolute;
-            margin-top: -6px;
-            margin-bottom: 30px;
-            mix-blend-mode: screen;
-        }
     </style>
 </head>
 
@@ -94,36 +92,29 @@
         <br>
         <div class="top-text" id="a"></div>
         <div class="middle-text" id="b"></div>
-        <svg width="400" height="200" viewBox="0 0 400 200">
-            <defs>
-                <radialGradient id="redGradient" cx="50%" cy="100%" r="100%" fx="50%" fy="100%">
-                    <stop offset="0%" style="stop-color:rgb(204, 2, 2);stop-opacity:0.8" />
-                    <stop offset="70%" style="stop-color:rgb(0, 0, 0);stop-opacity:0" />
-                </radialGradient>
-            </defs>
-            <rect x="0" y="0" width="400" height="200" fill="url(#redGradient)" />
-        </svg>
         <div class="author-text" id="c"></div>
     </div>
 
     <div class="editor-container">
         <label for="a-input">Part A:</label>
-        <textarea id="a-input" rows="4">
-            IF ANYONE
-            BUILDS IT,
-            EVERYONE
-            DIES</textarea>
+<textarea id="a-input" rows="4">
+IF ANYONE
+BUILDS IT,
+EVERYONE
+DIES</textarea>
 
         <label for="b-input">Part B:</label>
-        <textarea id="b-input" rows="4">WHY
-            SUPERHUMAN AI
-            WOULD
-            KILL US ALL</textarea>
+<textarea id="b-input" rows="4">
+WHY
+SUPERHUMAN AI
+WOULD
+KILL US ALL</textarea>
 
         <label for="c-input">Part C:</label>
-        <textarea id="c-input" rows="1">ELIEZER
-            YUDKOWSKY &
-            NATE SOARES</textarea>
+<textarea id="c-input" rows="1">
+ELIEZER
+YUDKOWSKY &
+NATE SOARES</textarea>
     </div>
 
     <script>
