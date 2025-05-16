@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Passion One', sans-serif;
+            line-height: 180%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            color: white;
+        }
+
+        .quote-container {
+            width: 400px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #000;
+            position: relative;
+        }
+
+        .top-text {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .middle-text {
+            width: 70%;
+            font-size: 32px;
+            color: #808080;
+            margin-bottom: 10px;
+        }
+
+        .highlighted-text {
+            font-size: 22px;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .author-text {
+            font-size: 40px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .editor-container {
+            margin-top: 50px;
+            width: 400px;
+        }
+
+        .editor-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-family: 'Passion One', sans-serif;
+            font-stretch: ultra-expanded;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        svg {
+            position: absolute;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            mix-blend-mode: screen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quote-container">
+        <br>
+        <br>
+        <div class="top-text" id="a"></div>
+        <div class="middle-text" id="b"></div>
+        <svg width="400" height="200" viewBox="0 0 400 200">
+            <defs>
+                <radialGradient id="redGradient" cx="50%" cy="100%" r="100%" fx="50%" fy="100%">
+                    <stop offset="0%" style="stop-color:rgb(204, 2, 2);stop-opacity:0.8" />
+                    <stop offset="70%" style="stop-color:rgb(0, 0, 0);stop-opacity:0" />
+                </radialGradient>
+            </defs>
+            <rect x="0" y="0" width="400" height="200" fill="url(#redGradient)" />
+        </svg>
+        <div class="author-text" id="c"></div>
+    </div>
+
+    <div class="editor-container">
+        <label for="a-input">Part A:</label>
+        <textarea id="a-input" rows="4">
+            IF ANYONE
+            BUILDS IT,
+            EVERYONE
+            DIES</textarea>
+
+        <label for="b-input">Part B:</label>
+        <textarea id="b-input" rows="4">WHY
+            SUPERHUMAN AI
+            WOULD
+            KILL US ALL</textarea>
+
+        <label for="c-input">Part C:</label>
+        <textarea id="c-input" rows="1">ELIEZER
+            YUDKOWSKY &
+            NATE SOARES</textarea>
+    </div>
+
+    <script>
+        // Bind textareas to the displayed text
+        const a = document.getElementById('a');
+        const b = document.getElementById('b');
+        const c = document.getElementById('c');
+        const aInput = document.getElementById('a-input');
+        const bInput = document.getElementById('b-input');
+        const cInput = document.getElementById('c-input');
+        a.innerHTML = aInput.value.replace(/\n/g, '<br>');
+        b.innerHTML = bInput.value.replace(/\n/g, '<br>');
+        c.innerHTML = cInput.value.replace(/\n/g, '<br>');
+        aInput.addEventListener('input', function () {
+            a.innerHTML = this.value.replace(/\n/g, '<br>');
+        });
+        bInput.addEventListener('input', function () {
+            b.innerHTML = this.value.replace(/\n/g, '<br>');
+        });
+        cInput.addEventListener('input', function () {
+            c.innerHTML = this.value.replace(/\n/g, '<br>');
+        });
+
+    </script>
+</body>
+
+</html>
